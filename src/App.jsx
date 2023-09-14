@@ -51,15 +51,16 @@ function App() {
 
   return (
     <>
-    <div className='bg-gray-200 px-12'>
+    <div className='bg-gray-200 px-4 md:px-6 lg:px-12 py-6 lg:py-12'>
       <div className='header'>
         <Header></Header>
       </div>
-      <div className='flex justify-between'>
-        <div className="w-3/4">
+      <div className='flex flex-col-reverse lg:flex-row justify-center lg:justify-between gap-6'>
+        <div className="md:w-full lg:w-3/4">
+          <h1 className="block lg:hidden text-2xl font-bold text-center text-gray-700 mb-5 border-b-2 border-t-2 border-gray-400 py-3">Courses</h1>
         <Carts key={courses.id} handleSelectButton={handleSelectButton} courses={courses}></Carts>
         </div>
-        <div className="1/4">
+        <div className="md:w-3/4 lg:w-1/4 md:mx-[auto] mx-0  ">
           <Bookmarks Select={Select} totalCredit={totalCredit} remaining={remaining} totalPrice={totalPrice}></Bookmarks>
         </div>
       </div>
