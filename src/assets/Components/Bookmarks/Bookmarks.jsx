@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Bookmarks = ({Select, totalCredit, remaining}) => {
+const Bookmarks = ({Select, totalCredit, remaining, totalPrice}) => {
     return (
         <div className='bg-white p-4 rounded-xl '>    
             <div className='border-b-2 border-gray-200'>
@@ -17,6 +17,9 @@ const Bookmarks = ({Select, totalCredit, remaining}) => {
             <div className='border-b-2 border-gray-200'>
                 <h1 className='py-4 text-[20px] font-semibold'>Total credit hour : {totalCredit} hr</h1>
             </div>
+            <div className='border-b-2 border-gray-200'>
+                <h1 className='py-4 text-[20px] font-semibold'>Total Price : {totalPrice} USD</h1>
+            </div>
 
         </div>
     );
@@ -26,6 +29,7 @@ Bookmarks.propTypes = {
     Select:PropTypes.object,
     totalCredit: PropTypes.number,
     remaining: PropTypes.number,
+    totalPrice: PropTypes.number,
 };
 
 export default Bookmarks;

@@ -19,7 +19,7 @@ function App() {
 
   const handleSelectButton = course=>
   {
-    if (Select.length < 21){
+    if (remaining >0){
       const newSelect= [...Select, course];
       setSelect(newSelect);
       // set credit
@@ -37,6 +37,8 @@ function App() {
         alert(`Credit limit exceed, can't select more`)
       }
       //set total price
+      const newPrice = totalPrice+ course.price;
+      setTotalPrice(newPrice);
     }else{
       alert(`You have already selected the maximum number of courses (20).`);
     }
@@ -58,7 +60,7 @@ function App() {
         <Carts key={courses.id} handleSelectButton={handleSelectButton} courses={courses}></Carts>
         </div>
         <div className="1/4">
-          <Bookmarks Select={Select} totalCredit={totalCredit} remaining={remaining}></Bookmarks>
+          <Bookmarks Select={Select} totalCredit={totalCredit} remaining={remaining} totalPrice={totalPrice}></Bookmarks>
         </div>
       </div>
     </div>
