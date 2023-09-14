@@ -26,7 +26,7 @@ const Cart = ({course, handleSelectButton}) => {
                         <p className=' text-[16px] text-gray-500'>Credit : {credit}hr</p>
                     </div>
                 </div>
-                <button onClick={()=> handleSelectButton(course)} className="btn-primary w-full bg-blue-700 py-2 rounded-lg text-white text-xl mt-6">Select</button>
+                <button onClick={()=> handleSelectButton(course)} className="btn-primary w-full bg-blue-500 py-2 rounded-lg text-white text-xl mt-6">Select</button>
             </div>
         </div>
     );
