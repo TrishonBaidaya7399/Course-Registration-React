@@ -2,11 +2,16 @@ import PropTypes from 'prop-types';
 import { FiDollarSign } from 'react-icons/fi';
 import { BsBook } from 'react-icons/bs';
 
-const Cart = ({course, handleSelectButton}) => {
-    const {cover_img,title,details,price,credit}=course;
+
+const Cart = ({ course, handleSelectButton}) => {
+    const { cover_img, title, details, price, credit, } = course;
+    // const handleUnSelected= handleUnSelected;
+    // console.log(handleUnSelected);
+
+
     return (
         <div className='cart bg-white rounded-xl p-4'>
-            <div className="cover-img ">
+            <div className="cover-img">
                 <img className='rounded-lg' src={cover_img} alt={`Cover Picture of ${title}`} />
             </div>
             <div className="cart-body">
@@ -15,26 +20,34 @@ const Cart = ({course, handleSelectButton}) => {
                 <div className='flex justify-between '>
                     <div className='flex items-center gap-2 mt-4'>
                         <div className='text-[24px] text-gray-700'>
-                            <FiDollarSign></FiDollarSign>
+                            <FiDollarSign />
                         </div>
                         <p className='text-[16px] text-gray-500'>Price : {price}</p>
                     </div>
                     <div className='flex items-center gap-2 mt-4'>
                         <div className='text-[24px] text-gray-700'>
-                            <BsBook></BsBook>
+                            <BsBook />
                         </div>
                         <p className=' text-[16px] text-gray-500'>Credit : {credit}hr</p>
                     </div>
                 </div>
-                <button onClick={()=> handleSelectButton(course)} className="btn-primary w-full bg-blue-500 py-2 rounded-lg text-white text-xl mt-6">Select</button>
+                <button
+                className='btn-primary w-full py-2 rounded-lg text-white text-xl mt-6 bg-blue-500'
+                    onClick={() => { 
+                      
+                        handleSelectButton(course)
+                    }}
+                   >Select
+                </button>
             </div>
         </div>
     );
 };
 
 Cart.propTypes = {
-    course: PropTypes.object.isRequired,
-    handleSelectButton: PropTypes.object,
+    course: PropTypes.object,
+    handleSelectButton: PropTypes.func,
+    handleUnSelected: PropTypes.bool,
 };
 
 export default Cart;

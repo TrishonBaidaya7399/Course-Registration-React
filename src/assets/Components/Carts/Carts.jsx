@@ -18,6 +18,8 @@ Carts.propTypes = {
     courses: PropTypes.object.isRequired,
     course: PropTypes.object.isRequired,
     handleSelectButton: PropTypes.object,
+    isSelected: PropTypes.bool,
+ 
    
 
 };
